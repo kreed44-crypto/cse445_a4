@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
             elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!--Root: NationalParks hold one more more elements-->
-  <xsd:element name="NationalParks">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="NationalPark" minOccurs="1" maxOccurs="unbounded">
-          <xsd:complexType>
+  <xs:element name="NationalParks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NationalPark" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
 			  <!--sequence:children appear left to right-->
-            <xsd:sequence>
-              <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
 				<!--Multiple phone elements are allowed-->
-              <xsd:element name="Phone" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
-              <xsd:element name="Address" minOccurs="1" maxOccurs="1">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element name="Number" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-                    <xsd:element name="Street" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-                    <xsd:element name="City" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-                    <xsd:element name="State" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-                    <xsd:element name="Zip" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-                  </xsd:sequence>
+              <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+              <xs:element name="Address" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Street" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="City" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="State" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Zip" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                  </xs:sequence>
 					<!--Required attribute on Address-->
-                  <xsd:attribute name="NearestAirport" type="xsd:string" use="required"/>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
+                  <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
 			  <!--Optional attribute on NationalPark-->
-            <xsd:attribute name="Rating" type="xsd:decimal" use="optional"/>
-          </xsd:complexType>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+            <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-</xsd:schema>
+</xs:schema>
